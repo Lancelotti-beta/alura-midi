@@ -9,6 +9,7 @@ for(let i = 0; i < btn.length; i++){
 	btn[i].addEventListener('click', () => {
 		//Até aqui eu já pego o valor do input
 		console.log(valorAtualDoBtn);
+
 	});
 }
 
