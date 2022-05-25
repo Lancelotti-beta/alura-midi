@@ -1,21 +1,16 @@
-const listaTeclado = document.querySelector('.teclado');
-const btn = listaTeclado.querySelectorAll('input[type="button"]');
-let tel = document.querySelector('input[type="tel"]');
+const btn = document.querySelectorAll('input[type="button"]');
+const tel = document.querySelector('input[type="tel"]');
 
-function imprimeNaTela(n){
-	let valor = tel.value;
-	//até aqui eu tenho o 'placeholder' com o valor do 'botão'
-	valor = n;
-}
 
 for(let i = 0; i < btn.length; i++){
-	let valorAtualDoBtn = btn[i].value;
-	btn[i].addEventListener('click', () => {
-		//Até aqui eu já pego o valor do input
-		//console.log(valorAtualDoBtn);
+	const indiceDoBtn = btn[i];
+	const valorAtualDoBtn = indiceDoBtn.value;
 
-		imprimeNaTela(valorAtualDoBtn);
-	});
+	//Teneti criar uma variavel para armazenar o '.value' do input 'tel' dentro do laço 'for'
+	//mas só me retornava 'undefined', não entendo o motivo ainda mas logo mais descubro.
+	indiceDoBtn.onclick = () => {
+		tel.value = tel.value + valorAtualDoBtn
+	};
 }
 
 
