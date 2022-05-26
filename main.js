@@ -1,6 +1,12 @@
 function tocaSom(idConcatenado) {
     //document.querySelectorAll('.som')[i].play(); => Minha resolução, bem amadora.
-    document.querySelector(idConcatenado).play();
+    const som = document.querySelector(idConcatenado);
+
+    if((som) && (som.localName == "audio")) {
+        som.play();
+    } else {
+        console.log(`Elemento ou Seletor invlido!`);
+    }
 }
 
 const btn = document.querySelectorAll('.tecla');
@@ -22,22 +28,13 @@ for(let i = 0; i < btn.length; i++){
     };
 
     tecla.onkeydown = function (event) {
-        let tecla = event.key;
-        if(tecla == 'enter'){
-            tecla.classList.add('ativa');
-        } else if (tecla == 'backspace') {
+        if(event.key === 'Enter' || event.key === 'Space'){
             tecla.classList.add('ativa');
         }
     };
 
-    tecla.onkeyup = function (event) {
-        let tecla = event.key;
-        if(tecla == 'enter'){
-            tecla.classList.remove('ativa');
-        } else if ( tecla == 'backspace') {
-            tecla.classList.remove('ativa');
-            
-        }
+    tecla.onkeyup = function () {
+        tecla.classList.remove('ativa');
     };
 }
 

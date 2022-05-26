@@ -11,6 +11,16 @@ for(let i = 0; i < btn.length; i++){
 	indiceDoBtn.onclick = () => {
 		tel.value = tel.value + valorAtualDoBtn
 	};
+
+	indiceDoBtn.onkeydown = function (event) {
+		if(event.code == 'Enter' || event.code == 'Space') {
+			indiceDoBtn.classList.add('ativa');
+		}
+	}
+
+	indiceDoBtn.onkeyup = function () {
+		indiceDoBtn.classList.remove('ativa');
+	}
 }
 
 
