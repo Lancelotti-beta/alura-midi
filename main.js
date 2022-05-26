@@ -20,6 +20,25 @@ for(let i = 0; i < btn.length; i++){
     tecla.onclick = function () {
         tocaSom(instrumento);
     };
+
+    tecla.onkeydown = function (event) {
+        let tecla = event.key;
+        if(tecla == 'enter'){
+            tecla.classList.add('ativa');
+        } else if (tecla == 'backspace') {
+            tecla.classList.add('ativa');
+        }
+    };
+
+    tecla.onkeyup = function (event) {
+        let tecla = event.key;
+        if(tecla == 'enter'){
+            tecla.classList.remove('ativa');
+        } else if ( tecla == 'backspace') {
+            tecla.classList.remove('ativa');
+            
+        }
+    };
 }
 
 
